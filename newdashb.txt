@@ -1,0 +1,241 @@
+import React from 'react';
+import './App.css';
+import { Card, Row, Col, Typography } from 'antd';
+import { DollarCircleOutlined, ShoppingCartOutlined, ShoppingOutlined, UserOutlined,DashboardOutlined ,SettingOutlined ,} from '@ant-design/icons';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+
+
+
+const NavBar = () => (
+
+  <Card
+    style={{
+      backgroundColor: '#00a8ff',
+      color: '#fff',
+      marginBottom: '10px',
+      height: '90px',
+      // display: 'flex',
+      // flexDirection: 'column',
+      borderTopRightRadius:'5px',
+      borderTopLeftRadius:'5px',
+      borderBottomRightRadius:'0px',
+      borderBottomLeftRadius:'0px'
+      
+      
+    }}
+  >
+    <div
+      style={{
+        height: '50px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '4px',
+      
+      
+      }}
+    >
+      <h2>APP MODULES</h2>
+  <div style={{border:'1px solid #fff',display:'flex',flexDirection:'column',justifyContent:'space-between',width:'200px',borderRadius:'100px', margin:'10px'}}>
+  <div class="button-box" >
+                    <div id="btn"></div>
+                    <button type="button" onclick={()=>{
+                      login2()
+                    }} className='one' style={{backgroundColor:'#00a8ff',marginLeft:'20px'}}>Log In</button>
+                    <button type="button" onclick="register()" className='two' >Register</button>
+                </div>
+  </div>
+     {/* <Button  style={{marginLeft:'50%',}} type="primary">Primary  </Button>
+    
+     <Button style={{marginRight:'2%'}}> Primary 2</Button> */}
+      <input type="text" placeholder="Search" className="inputf" />
+    </div>
+    {/* Add your navigation elements here */}
+  </Card>
+);
+
+const { Title, Text } = Typography;
+
+const cardData = [
+
+  {
+    title: '3',
+    icon: <DashboardOutlined />,
+    description: 'Dashboard',
+  },
+  {
+    title: '4',
+    icon: <AutoGraphIcon />,
+    description: 'Analytical Dashboard',
+  },
+  {
+    title: '1',
+    icon: <SettingOutlined />,
+    description: 'System Admin',
+  },
+  {
+    title: ' 2',
+    icon: <ShoppingCartOutlined />,
+    description: 'Account Definition',
+  },
+  {
+    title: '3',
+    icon: <ShoppingOutlined />,
+    description: 'Account Transaction',
+  },
+  {
+    title: ' 4',
+    icon: <UserOutlined />,
+    description: 'Account Reports',
+  },
+  {
+    title: ' 1',
+    icon: <DollarCircleOutlined />,
+    description: 'Inventory Defination',
+  },
+  {
+    title: ' 2',
+    icon: <ShoppingCartOutlined />,
+    description: 'Inventory Management',
+  },
+  {
+    title: '3',
+    icon: <ShoppingOutlined />,
+    description: 'Supplier Purchaes',
+  },
+  {
+    title: '4',
+    icon: <UserOutlined />,
+    description: 'Customer Sales',
+  },
+
+ 
+  {
+    title: '3',
+    icon: <ShoppingOutlined />,
+    description: 'Commission Agent Services',
+  },
+  {
+    title: ' 4',
+    icon: <UserOutlined />,
+    description: 'Inventory Reports',
+  },
+  {
+    title: '1',
+    icon: <DollarCircleOutlined />,
+    description: 'Store Management',
+  },
+  {
+    title: '2',
+    icon: <ShoppingCartOutlined />,
+    description: 'Lab',
+  },
+  {
+    title: '3',
+    icon: <ShoppingOutlined />,
+    description: 'Lab Report',
+  },
+  {
+    title: '5',
+    icon: <ShoppingOutlined />,
+    description: 'Fixed Assets',
+  },
+  {
+    title: '1',
+    icon: <ShoppingOutlined />,
+    description: 'Export',
+  },
+  {
+    title: '1',
+    icon: <ShoppingOutlined />,
+    description: 'Export Reports',
+  },
+  {
+    title: '7',
+    icon: <ShoppingOutlined />,
+    description: 'Production',
+  },
+  {
+    title: '5',
+    icon: <ShoppingOutlined />,
+    description: 'Stock Reports',
+  },
+ 
+];
+
+const App = () => {
+  return (
+    <div 
+    style={{ 
+      border: '1px solid #00a8ff',width:'85%',marginTop:'50px',marginBottom:'50px',marginLeft:'10%',paddingBottom:'10px',
+      borderTopRightRadius:'8px',
+      borderTopLeftRadius:'8px',}}>
+       <NavBar />
+      <Row gutter={[2, 2]} justify="center">
+        {cardData.map((card, index) => (
+          <Col xs={24} sm={12} md={8} lg={6} xl={5} key={index}>
+            <Card hoverable
+            className='move'
+            style={{
+              // width: '90%',  
+                height: 160,
+                margin: '10px',
+                border: '1px solid #00a8ff',
+                marginLeft: 15,
+                marginRight: 20,
+                marginBottom:10,
+              }}>
+
+
+              <div style={{
+                  backgroundColor: '#00a8ff',
+                  color: '#fff',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  height: 40,
+                  borderTopRightRadius: 6,
+                  borderTopLeftRadius: 6,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 0,
+                  position:'absolute',
+                  top:'0px',
+                  left:'0px',
+                  width:'100%',
+              
+                 }}>
+                <Title level={4} style={{color:'#fff',fontWeight:700,margin:5}}   >
+                  {card.title}
+                </Title>
+              </div>
+
+                  <br></br>
+              <div   style={{
+                  color: '#00a8ff',
+                  // backgroundColor: 'rgba(0,255,0,0.25)',
+                  borderRadius: 20,
+                  padding: 8,
+                  margin: 0,
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  fontSize:'2.5rem',
+                  
+                }}>
+                  {card.icon}</div>
+
+
+              <Text style={{ display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',margin:0}}>{card.description}</Text>
+                  
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};
+
+export default App;
